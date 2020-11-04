@@ -1,6 +1,6 @@
 require 'digest'
 
-array = ['MD5', 'SHA1']
+array = ['MD5', 'SHA1', 'SHA2']
 
 puts 'Введите слово или фразу для шифрования:'
 
@@ -17,6 +17,8 @@ puts 'Вот что получилось:'
 
 if user_input == 1
   puts Digest::MD5.hexdigest(user_str)
-else
+elsif user_input == 2
   puts Digest::SHA1.hexdigest(user_str)
+else
+  puts Digest::SHA2.hexdigest(user_str)
 end
